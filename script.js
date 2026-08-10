@@ -51,8 +51,8 @@ cover.addEventListener('touchend', (e) => {
 }, { passive: false });
 
 // ---- Countdown timer ----
-// Target date: January 4, 2027 at 11:00 AM IST (UTC+5:30)
-const target = new Date('2027-01-04T11:00:00+05:30').getTime();
+// Target date: December 28, 2026 at 12:00 PM IST (UTC+5:30)
+const target = new Date('2026-12-28T12:00:00+05:30').getTime();
 
 function tick() {
   const now = Date.now();
