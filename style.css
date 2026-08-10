@@ -361,8 +361,9 @@ section {
 .hero-tag {
   margin-top: 22px;
   font-style: italic;
-  color: var(--rosewood-soft);
-  font-size: 16px;
+  color: var(--maroon-1);
+  font-weight: 500;
+  font-size: 16.5px;
 }
 
 .scroll-cue {
