@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Jisson &amp; Catherine | Betrothal Invitation</title>
+  <meta name="description" content="Together with our families, Mrs. Sini Alex & Mr. Alex Sebastian and Mrs. Jincy Thomas & Mr. Thomas Philip cordially invite you to the Betrothal ceremony of Jisson Alex and Catherine Therese Thomas on Monday, 4th January 2027 at St Mary’s Metropolitan Church, Changanacherry.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jisson &amp; Catherine — Betrothal Invitation">
+  <meta property="og:description" content="Monday, 4th January 2027 · St Mary’s Metropolitan Church & Parish Hall, Changanacherry. 'Therefore what God has joined together, let no one separate' — Mark 10:9">
+  <meta property="og:image" content="hero-bg.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background music (autoplay, loop) -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Mute / Unmute button — fixed bottom-left, always visible -->
+  <button id="mute-btn" aria-label="Toggle music" title="Toggle music">
+    <svg id="icon-sound" width="22" height="22" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+    <svg id="icon-muted" width="22" height="22" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         style="display:none;">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+  </button>
+
+  <!-- SVG defs for gold gradient used by cross icons -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="crossGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#F3E4C9"/>
+        <stop offset="50%" stop-color="#C39A3E"/>
+        <stop offset="100%" stop-color="#8C6A21"/>
+      </linearGradient>
+      <linearGradient id="crossGradDark" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#9C5A50"/>
+        <stop offset="100%" stop-color="#6E362D"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ COVER / OPENING ANIMATION ============ -->
+  <div id="cover">
+    <div class="fold left">
+      <div class="cover-top">
+        <div class="cover-arabic">℣</div>
+        <p class="cover-verse">“Therefore what God has joined together, let no one separate.”
+          <span class="cover-verse-ref">Mark 10:9</span>
+        </p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-name text-right">
+          <div class="n">Jisson</div>
+          <div class="r">The Groom</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-center" id="tapToOpen">
+      <div class="seal">
+        <!-- Interlocked wedding rings -->
+        <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:62px;height:38px;">
+          <defs>
+            <linearGradient id="ringGold1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F0D878"/>
+              <stop offset="50%" stop-color="#C39A3E"/>
+              <stop offset="100%" stop-color="#9A7428"/>
+            </linearGradient>
+            <linearGradient id="ringGold2" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F0D878"/>
+              <stop offset="50%" stop-color="#DCC07E"/>
+              <stop offset="100%" stop-color="#A07830"/>
+            </linearGradient>
+            <!-- clip left ring so it appears behind right ring at overlap -->
+            <clipPath id="clipLeft">
+              <rect x="0" y="0" width="38" height="40"/>
+            </clipPath>
+            <!-- clip right ring so it appears in front at overlap -->
+            <clipPath id="clipRight">
+              <rect x="26" y="0" width="38" height="40"/>
+            </clipPath>
+          </defs>
+
+          <!-- Left ring (behind) — clipped to left side -->
+          <g clip-path="url(#clipLeft)">
+            <circle cx="24" cy="20" r="14.5" stroke="url(#ringGold1)" stroke-width="4" fill="none"/>
+          </g>
+          <!-- Right ring (front) — full -->
+          <circle cx="40" cy="20" r="14.5" stroke="url(#ringGold2)" stroke-width="4" fill="none"/>
+          <!-- Left ring front arc (overlapping portion in front) -->
+          <g clip-path="url(#clipRight)">
+            <circle cx="24" cy="20" r="14.5" stroke="url(#ringGold1)" stroke-width="4" fill="none"/>
+          </g>
+
+          <!-- Small diamond on left ring top -->
+          <polygon points="24,3.5 26,6 24,8.5 22,6" fill="#F3E4C9" opacity="0.95"/>
+          <polygon points="24,3.5 26,6 24,8.5 22,6" fill="none" stroke="rgba(195,154,62,0.6)" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="tap-label">Tap to open</div>
+    </div>
+
+    <div class="fold right">
+      <div class="cover-top" style="visibility:hidden">
+        <div class="cover-arabic">℣</div>
+        <p class="cover-verse">placeholder</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-name">
+          <div class="n">Catherine</div>
+          <div class="r">The Bride</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-cross">
+        <img src="dove.png" alt="Two doves emblem" style="width:160px; height:auto; display:block; margin:0 auto;">
+      </div>
+      <p class="hero-verse">“Therefore what God has joined together, let no one separate”<br>
+        <span class="hero-verse-ref">— Mark 10:9</span>
+      </p>
+      <h1 class="hero-names">Jisson &amp; Catherine</h1>
+      <div class="hero-date">4  January 2027 · Monday</div>
+      <p class="hero-tag">are solemnising their Betrothal, and we request your presence &amp; blessings</p>
+      <div class="scroll-cue"><span>Scroll</span><div class="chev"></div></div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown">
+      <div class="eyebrow light">Counting Down</div>
+      <h2>Until Our Betrothal Ceremony</h2>
+      <div class="divider light"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+      <div class="countdown-grid" id="countdown">
+        <div class="cbox"><div class="cnum" id="cd-days">00</div><div class="clabel">Days</div></div>
+        <div class="cbox"><div class="cnum" id="cd-hours">00</div><div class="clabel">Hours</div></div>
+        <div class="cbox"><div class="cnum" id="cd-mins">00</div><div class="clabel">Minutes</div></div>
+        <div class="cbox"><div class="cnum" id="cd-secs">00</div><div class="clabel">Seconds</div></div>
+      </div>
+    </section>
+
+    <!-- INVITATION -->
+    <section class="invite">
+      <div class="eyebrow">With Joyful Hearts</div>
+      <div class="divider"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+      <p class="invite-lead">Together with our beloved parents and families, we cordially invite your esteemed presence and blessings on the auspicious occasion of the Betrothal ceremony of our children.</p>
+
+      <div class="couple-row">
+        <!-- Groom -->
+        <div class="couple-col">
+          <div class="role">The Groom</div>
+          <div class="name">Jisson Alex</div>
+          <div class="parents">
+            Son of <strong>Mrs. Sini Alex &amp; Mr. Alex Sebastian</strong><br>
+            Chennithala House,<br>
+            Changanacherry
+          </div>
+        </div>
+        <div class="amp">&amp;</div>
+        <!-- Bride -->
+        <div class="couple-col">
+          <div class="role">The Bride</div>
+          <div class="name">Catherine Therese Thomas</div>
+          <div class="parents">
+            Daughter of <strong>Mrs. Jincy Thomas &amp; Mr. Thomas Philip</strong><br>
+            Ambalathinkal House,<br>
+            Changanacherry
+          </div>
+        </div>
+      </div>
+
+      <p class="invite-note">Your prayers and gracious presence on this beautiful day will make our Betrothal celebration truly complete.</p>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events">
+      <div class="eyebrow">The Celebrations</div>
+      <h2>Events</h2>
+      <div class="divider"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="tag">Sacred Ceremony</div>
+          <h3>Betrothal Ceremony</h3>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="calendar-days"></i></span>
+            <div>
+              <div class="t1">4th January 2027 — Monday</div>
+              <div class="t2">12:00 PM</div>
+            </div>
+          </div>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="map-pin"></i></span>
+            <div>
+              <div class="t1">St Mary’s Metropolitan Church</div>
+              <div class="t2">Changanacherry, Kerala</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tag">Join Us After</div>
+          <h3>Reception &amp; Lunch</h3>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="calendar-days"></i></span>
+            <div>
+              <div class="t1">4th January 2027 — Monday</div>
+              <div class="t2">Immediately following Ceremony</div>
+            </div>
+          </div>
+          <div class="card-row">
+            <span class="ic"><i data-lucide="map-pin"></i></span>
+            <div>
+              <div class="t1">Parish Hall</div>
+              <div class="t2">Changanacherry, Kerala</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section class="venue">
+      <div class="eyebrow">Where To Find Us</div>
+      <h2>Venues &amp; Directions</h2>
+      <div class="divider"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+      <div class="venue-card">
+        <div class="venue-tag">✦ Betrothal Church Venue ✦</div>
+        <div class="venue-name">St Mary’s Metropolitan Church</div>
+        <div class="venue-addr">Changanacherry, Kerala, India</div>
+        <div class="venue-map">
+          <a href="https://maps.app.goo.gl/DLm7jKvjT5jv2tXL7" target="_blank" rel="noopener" aria-label="Open St Mary’s Metropolitan Church in Google Maps">
+            <img src="church.png" alt="St Mary’s Metropolitan Church, Changanacherry" loading="lazy">
+          </a>
+        </div>
+        <a class="venue-btn" href="https://maps.app.goo.gl/DLm7jKvjT5jv2tXL7" target="_blank" rel="noopener">
+          <i data-lucide="map-pin"></i> Open in Google Maps
+        </a>
+      </div>
+
+      <div class="venue-card">
+        <div class="venue-tag">✦ Reception Venue ✦</div>
+        <div class="venue-name">Parish Hall</div>
+        <div class="venue-addr">Changanacherry, Kerala, India</div> 
+      </div>
+    </section>
+
+    <!-- PHOTO BANNER -->
+    <section class="photo-section">
+      <div class="photo-wrap">
+        <img src="couple.png" alt="Jisson Alex and Catherine Therese Thomas Betrothal Theme">
+        <div class="photo-overlay">
+          <div class="photo-caption">Two hearts, one journey
+            <span class="amp2">Jisson &amp; Catherine</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <div class="names">Jisson &amp; Catherine</div> 
+      <p class="msg">With Love &amp; Prayers,<br>we look forward to celebrating our Betrothal with you.</p>
+
+      <div class="sharing-happiness">
+        <div class="sharing-title">Sharing happiness:</div>
+        <p class="sharing-names">Irene Maria Thomas, Arun Davis,Jisna Alex</p>
+        <p class="sharing-subtext">along with our family’s first little blessing 🤍</p>
+      </div>
+       <div class="foot">Jisson &amp; Catherine · 4 January 2027</div>
+    </section>
+
+  </main>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
